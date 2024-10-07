@@ -10,10 +10,25 @@ let mainContainer = document.querySelector("#root")
     domElement.innerHTML = reactElement.children
     domElement.setAttribute('href', reactElement.props.href)
     domElement.setAttribute('target', reactElement.props.target)
-
     container.appendChild(domElement)
 } */
 
+
+    // Modern Way to render the React Element
+
+    function customRender(reactElement, container){
+        
+    const domElement = document.createElement(reactElement.type)
+    domElement.innerHTML = reactElement.children
+    for (const prop in reactElement.props) {
+
+        if (prop === 'children') continue;
+        domElement.setAttribute(prop,reactElement.props[prop])}
+        container.appendChild(domElement)
+    }
+
+        
+            
 // Render 'a' tag
 let reactElement = {
     type: 'a',
