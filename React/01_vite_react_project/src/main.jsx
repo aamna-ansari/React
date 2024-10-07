@@ -5,16 +5,15 @@ import App from './App.jsx'
 
 // Create React element
 
-let anotherElement = React.createElement(
- 'a',
- {href: 'https://google.com', target: '_blank'
-},
- 'Click me to visit google'
-)
+// let anotherElement = React.createElement(
+//  'a',
+//  {href: 'https://google.com', target: '_blank'
+// },
+//  'Click me to visit google'
+// )
 
 createRoot(document.getElementById('root')).render(
-  anotherElement
-  
- 
+  // anotherElement
+  <App/>
 )
 
