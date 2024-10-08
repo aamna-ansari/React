@@ -4,7 +4,7 @@ import './App.css'
 function App() {
 
   let [counter, setCounter] = useState(15)
-
+  
   // let counter = 5
   // function for add value
   // const addValue = () => {
@@ -27,7 +27,6 @@ function App() {
     // console.log('clicked added', counter);
 
     if (counter > 0) {
-
       setCounter(counter - 1);
 
   }}
