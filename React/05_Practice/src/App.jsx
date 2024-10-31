@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export const App = () => {
+const [username, setUsername] = useState('')
+
 const submitHandler = (e)=>{
-  e.preventDefault()
-  console.log('Submitted');
+  e.preventDefault();
+  console.log(username);
+  setUsername('')
   
 }
   return (
