@@ -1,12 +1,18 @@
-import './App.css'
+import React from 'react'
+import 'bootstrap/dist/js/bootstrap.bundle'
+import './App.scss'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Home from './pages/frontend/Home'
 
-
-function App() {
-  
-
+const App = () => {
   return (
-    <>
-    </>
+    <div>
+      <Header/>
+      <Home/>
+      <Footer/>
+      
+      </div>
   )
 }
 
