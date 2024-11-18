@@ -1,14 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Contact = () => {
-    
-   let name = '';
+    let [name] = useState('')
+   let name1 = '';
    let city = '';
     
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log("name", name);
-        console.log("city", city);
+        console.log("Name", name);
+        console.log("City", city);
     }
   return (
     <main>
