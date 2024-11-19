@@ -7,7 +7,7 @@ const Frontend = () => {
   return (
     <>
     <Header/>
-    <Home/>
+    <main><Home/></main>
     <Footer/>
     </>
   )
