@@ -6,7 +6,7 @@ import Frontend from './Frontend'
 const Index = () => {
   return (
     <Routes>
-      <Route path = '/' element = {<Frontend/>} />
+      <Route path = '/*' element = {<Frontend/>} />
     </Routes>
   )
 }
