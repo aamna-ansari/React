@@ -6,8 +6,7 @@ const Register = () => {
 
 
   const handleChange = e => {
-    console.log(e.target.value);
-    setState({...state, fullName: e.target.value})
+    setState({...state, [e.target.name]: e.target.value})
 
     // use spread operator for shallow copy 
 }
@@ -26,28 +25,28 @@ const handleSubmit = e => {
                 <Row>
                     <Col span={24}>
                     <Form.Item label = 'Full Name' required>
-                    <Input type='text' placeholder='Enter Your First Name' name='fullName' onChange={ e => {handleChange}}>
+                    <Input type='text' placeholder='Enter Your First Name' name='fullName' onChange= {handleChange}>
                      </Input>
                     </Form.Item>
                     </Col>
 
                     <Col span={24}>
                     <Form.Item label = 'Email' required>
-                    <Input type='email' placeholder='Enter Your Email' name='email'>
+                    <Input type='email' placeholder='Enter Your Email' name='email' onChange= {handleChange}>
                      </Input>
                     </Form.Item>
                     </Col>
 
                     <Col span={24}>
                     <Form.Item label = 'Password' required>
-                    <Input.Password  placeholder='Enter Your Password' name='password'>
+                    <Input.Password  placeholder='Enter Your Password' name='password' onChange= {handleChange}>
                      </Input.Password>
                     </Form.Item>
                     </Col>
 
                     <Col span={24}>
                     <Form.Item label = 'Confirm Password' required>
-                    <Input.Password  placeholder='Enter Your Password Again'  name='confirmPassword'>
+                    <Input.Password  placeholder='Enter Your Password Again'  name='confirmPassword' onChange= {handleChange}>
                      </Input.Password>
                     </Form.Item>
                     </Col>
