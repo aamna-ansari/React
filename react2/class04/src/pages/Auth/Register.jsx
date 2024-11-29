@@ -1,5 +1,5 @@
 import React , {useState}from 'react'
-import { Col, Row, Button, Input, Form } from 'antd'
+import { Col, Row, Button, Input, Form, message } from 'antd'
 
 const Register = () => {
   const [state, setState] = useState({fullName: '', email:'', password: '', confirmPassword: ''}); //Object as a parameter
@@ -14,6 +14,16 @@ const Register = () => {
 const handleSubmit = e => {
     e.preventDefault();
     console.log(state);
+
+    let {fullName, email, password, confirmPassword} = state
+
+    fullName = fullName.trim()
+    if (fullName.length<3) {return message.error('Please Enter Your Full name')}
+    if (password.length < 6){return message.error("Password must be at least 6 chars.")}
+
+    const user = {fullName, email, password, confirmPassword}
+    console.log('user', user);
+    
     
 }
 
