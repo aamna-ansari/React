@@ -22,13 +22,16 @@ function App() {
       let char = Math.floor(Math.random() * str.length + 1)
       pass += str.charAt(char)
     }
-
-    
     setPassword(pass)
 
   }, [length, charAllowed, numberAllowed, setPassword])
 
-  const copyPassword = useCallback(() => {}, [password])
+  const copyPassword = useCallback(() => {
+    passwordRef.current?.select();
+    passwordRef.current?.setSelectionRange(0,20);
+    window.navigator.clipboard.writeText(password)
+  }, [password])
+
 
   useEffect(() => {
     passwordGenerator()
@@ -47,7 +50,8 @@ function App() {
           readOnly
           ref={passwordRef}
           />
-          <button onChange={copyPassword}
+          <button 
+          onClick={copyPassword}
           className='bg-blue-700 px-3 py-0.5 shrink-0 text-white' >Copy</button>
         </div>
         <div className=' flex text-sm gap-x-2'>
