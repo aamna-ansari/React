@@ -33,15 +33,18 @@ const Parent = () => <Child />;
 # Consume the Context: Using useContext:
 ```ts
 import React, { useContext } from 'react';
-import { ThemeContext } from './App';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const Child = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
-  return (
+    return (
     <button onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
       Switch to {theme === 'light' ? 'dark' : 'light'} mode
     </button>
   );
 };
+
+export default Child;
+
 ```
